@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Home from './Home'
+import Game from './Game'
 
-export default class HomeContainer extends Component {
+export default class GameContainer extends Component {
     render() {
         return (
             <div>
-                <Home />
+                <Game />
             </div>
         )
     }
