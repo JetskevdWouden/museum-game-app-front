@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Home from './Home'
+import LoginForm from './LoginForm';
 
-export default class HomeContainer extends Component {
+export default class LoginFormContainer extends Component {
     render() {
         return (
             <div>
-                <Home />
+                <LoginForm />
             </div>
         )
     }
