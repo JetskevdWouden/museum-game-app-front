@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './GameImage.css'
 
-export default class GameImage extends Component {
-    render() {
-
-        const urlImage = 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Kandinsky_-_Jaune_Rouge_Bleu.jpg'
+export default function GameImage (props) {
+    
+        
         
         return (
             <div className='imageContainer'>
@@ -22,11 +21,10 @@ export default class GameImage extends Component {
                             <li className='imagePixel'></li>
                         </ul>
                         
-                    
-                    <img src={urlImage} id='image' alt='kandinsky'/>
+                    <img src={props.urlImage} id='image' alt='kandinsky'/>
                 </div>
                 
             </div>
         )
     }
-}
+

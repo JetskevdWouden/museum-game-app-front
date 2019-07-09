@@ -1,0 +1,15 @@
+.paintingList{
+    list-style: none;
+    clear: both;
+    width: 90%;
+    margin: 0 auto;
+}
+.pictures{
+    display: block;
+    max-width: 200px;
+    margin: 20px;
+    float: left;
+}
+.pictures img{
+    width: 100%
+}
