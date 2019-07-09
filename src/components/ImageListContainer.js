@@ -1,13 +1,29 @@
 import React, { Component } from 'react'
 import ImageList from './ImageList'
 import './ImageList.css'
+import {getPaintings} from '../actions/getPaintings'
+import { connect } from 'react-redux'
 
-export default class ImageListContainer extends Component {
+class ImageListContainer extends Component {
+    state = {paintings: []}
+   
+    componentDidMount() {
+        this.props.getPaintings()
+    }
+    
     render() {
+       
         return (
             <div>
-                <ImageList />
+                <ImageList paintings={this.props.paintings}/>
             </div>
         )
     }
 }
+
+const mapmapStatetoProps = (state) => {
+    return {
+        paintings: state.gamePaintings
+    }
+}
+export default connect(mapmapStatetoProps, {getPaintings})(ImageListContainer)
