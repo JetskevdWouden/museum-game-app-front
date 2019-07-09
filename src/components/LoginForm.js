@@ -4,6 +4,7 @@ export default function LoginForm(props) {
     return (
         <div>
             <div id='loginForm'>
+            Already have an account?
                 <form onSubmit={props.onSubmit}>
                     <input 
                         type='text' 
