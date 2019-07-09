@@ -12,7 +12,7 @@ export default class App extends Component {
         <Route path="/" exact component={LoginFormContainer} />
         <Route path="/sign-up" exact component={SignUpFormContainer} />
         <Route path="/" exact component={ImageListContainer} />
-        <Route path="/" exact component={GameContainer} />
+        <Route path="/game" exact component={GameContainer} />
       </div>
     )
   }
