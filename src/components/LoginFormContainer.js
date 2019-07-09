@@ -8,7 +8,7 @@ export class LoginFormContainer extends Component {
     state = { username: '', password: ''}
 
     onSubmit = (event) => {
-        console.log('submit')
+        console.log('submit', this.props)
         event.preventDefault()
         this.props.login(this.state.username, this.state.password)
     }
