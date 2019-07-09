@@ -11,7 +11,7 @@ export default class App extends Component {
       <div className="App">
         <Route path="/" exact component={LoginFormContainer} />
         <Route path="/" exact component={ImageListContainer} />
-        <Route path="/" exact component={GameContainer} />
+        <Route path="/game" exact component={GameContainer} />
       </div>
     )
   }

@@ -8,11 +8,17 @@ import { connect } from 'react-redux'
 class GameContainer extends Component {
     state = {paintings: []}
     urlImage = 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Kandinsky_-_Jaune_Rouge_Bleu.jpg'
+    
     componentDidMount() {
         this.props.getPaintings()
     }
+    checkAnswer(artists, painting) {
+        const answer = artists.find(artist => artist.id === painting.artistId)
+        if(!answer) return false
+        return true
+    }
     render() {
-        
+       
         return (
             <div>
                 <Game urlImage={this.urlImage}/>
@@ -21,7 +27,9 @@ class GameContainer extends Component {
     }
 }
 
-const mapmapStatetoProps = (state) => {
-    return state
+const mapStatetoProps = (state) => {
+    return {
+        paintings: state.gamePaintings
+    }
 }
-export default connect(mapmapStatetoProps, {getPaintings})(GameContainer)
+export default connect(mapStatetoProps, {getPaintings})(GameContainer)
