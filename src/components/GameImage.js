@@ -7,15 +7,15 @@ export default function GameImage (props) {
                 <div className='imageDiv'>
 
                         <ul className='imagePixelsContainer'>
-                            <li className='imagePixel'></li>
-                            <li className='imagePixel'></li>
-                            <li className='imagePixel'></li>
-                            <li className='imagePixel'></li>
-                            <li className='imagePixel'></li>
-                            <li className='imagePixel'></li>
-                            <li className='imagePixel'></li>
-                            <li className='imagePixel'></li>
-                            <li className='imagePixel'></li>
+                            <li className='imagePixel' onClick={props.revealImage}></li>
+                            <li className='imagePixel' onClick={props.revealImage}></li>  
+                            <li className='imagePixel' onClick={props.revealImage}></li>
+                            <li className='imagePixel' onClick={props.revealImage}></li>
+                            <li className='imagePixel' onClick={props.revealImage}></li>
+                            <li className='imagePixel' onClick={props.revealImage}></li>
+                            <li className='imagePixel' onClick={props.revealImage}></li>
+                            <li className='imagePixel' onClick={props.revealImage}></li>
+                            <li className='imagePixel' onClick={props.revealImage}></li>
                         </ul>
                         
                     <img src={props.urlImage} id='image' alt='kandinsky'/>

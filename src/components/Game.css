@@ -1,11 +1,21 @@
 .answer {
     display: block;
-    background: #e1e7eb;
+    background: #2980b9;
     padding: 20px;
     border-radius: 4px;
     margin: 10px auto;
-    max-width: 800px;
+    max-width: 500px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+}
+.active{
+    background:#3498db;
+    color: #fff
 }
 .answer input{
     margin-right: 20px
 }
+.button{}
+.gameContainer{text-align: center;
+padding-bottom: 30px}
