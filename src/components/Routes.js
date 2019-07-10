@@ -15,7 +15,7 @@ export default function Routes() {
       <Route path="/sign-up" exact component={SignUpFormContainer} />
       <Route path="/" exact component={ImageListContainer} />
       <Route path="/game" exact component={GameContainer} />
-      <Route path="gamelist" exact component={GameListContainer} />
+      <Route path="/gamelist" exact component={GameListContainer} />
 
     </div>
   )

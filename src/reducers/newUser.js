@@ -3,7 +3,7 @@ import { SIGNUP_SUCCES } from '../actions/auth'
 export default function (state = null, action) {
   switch(action.type) {
     case SIGNUP_SUCCES:
-      alert('You have succesfully created an new account')
+      alert(`You have succesfully created an new account ${action.newUser.username}`)
       return action.newUser
     default:
       return state
