@@ -20,7 +20,7 @@ class ImageListContainer extends Component {
 
 const mapStatetoProps = (state) => {
     return {
-        paintings: state.gamePaintings
+        paintings: state.gamePaintings.paintingsHome
     }
 }
 export default connect(mapStatetoProps, { getPaintings })(ImageListContainer)
