@@ -3,6 +3,7 @@ import users from './users'
 import currentUser from './currentUser'
 import newUser from './newUser'
 import gamePaintings from './gamePaintings'
+import games from './games'
 import guessedAnswer from './guessedAnswer'
 
 export default combineReducers ({
@@ -10,5 +11,6 @@ export default combineReducers ({
     currentUser,
     newUser,
     gamePaintings,
+    games,
     guessedAnswer
 })
