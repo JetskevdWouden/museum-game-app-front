@@ -28,7 +28,6 @@ export class SignUpFormContainer extends Component {
     }
     
     render() {
-        console.log('this.state:', this.state.password_confirmation)
         return <SignUpForm
                     onSubmit={this.onSubmit} 
                     onChange={this.onChange} 
