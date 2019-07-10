@@ -1,27 +1,37 @@
 import React, { Component } from 'react'
 import Game from './Game'
 import './Game.css'
-import {getPaintings} from '../actions/getPaintings'
+import {getAnswers} from '../actions/getPaintings'
+import {guessedAnswer} from '../actions/checkAnswer'
 import { connect } from 'react-redux'
 
 
 class GameContainer extends Component {
-    state = {paintings: []}
-    urlImage = 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Kandinsky_-_Jaune_Rouge_Bleu.jpg'
-    
     componentDidMount() {
-        this.props.getPaintings()
+        this.props.getAnswers()
     }
-    checkAnswer(artists, painting) {
-        const answer = artists.find(artist => artist.id === painting.artistId)
-        if(!answer) return false
-        return true
+    checkAnswer =(event)=> {
+        const titleName = event.target.innerHTML
+        return this.props.guessedAnswer(titleName)     
     }
+    onSubmit = () => {  
+        if (this.props.userAnswer  === this.props.answer.title){
+            console.log(true)
+            return true
+        }
+        else{
+            console.log(false)
+            return false
+        }
+    }
+    
     render() {
        
         return (
+            
             <div>
-                <Game urlImage={this.urlImage}/>
+                {this.props.answer && <Game paintings={this.props.paintings} correctAnswer={this.props.answer} checkAnswer={this.checkAnswer} onSubmit={this.onSubmit} />}
+                {!this.props.answer && 'loading..'}
             </div>
         )
     }
@@ -29,7 +39,9 @@ class GameContainer extends Component {
 
 const mapStatetoProps = (state) => {
     return {
-        paintings: state.gamePaintings
+        paintings: state.gamePaintings.paintings,
+        answer: state.gamePaintings.correctAnswer,
+        userAnswer: state.guessedAnswer.title
     }
 }
-export default connect(mapStatetoProps, {getPaintings})(GameContainer)
+export default connect(mapStatetoProps, {getAnswers, guessedAnswer} )(GameContainer)
