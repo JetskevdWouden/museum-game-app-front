@@ -1,20 +1,21 @@
-
-.imageContainer{
-   
+.imageContainer {
     margin: 10px auto;
     position: relative;
     background: green;
     clear: both;
     -moz-box-sizing: content-box;
--webkit-box-sizing: content-box;
-box-sizing: content-box;
-width: 800px;
-height: auto
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 800px;
+    height: auto;
+    margin-bottom: 30px;
 }
-.imageDiv{
+
+.imageDiv {
     width: 100%;
 }
-.imagePixelsContainer{
+
+.imagePixelsContainer {
     width: 100%;
     width: 100%;
     height: 100%;
@@ -32,19 +33,17 @@ height: auto
     align-items: flex-start;
     flex-direction: row;
     max-height: 100%;
-    
 }
+
 #image {
     width: 800px;
     max-width: 800px;
     max-height: 800px;
     display: block;
     z-index: 0;
-    
 }
 
 .imagePixel {
-    
     list-style: none;
     margin: 0;
     padding: 0;
@@ -52,5 +51,4 @@ height: auto
     width: 33.33%;
     height: 34%;
     z-index: 100;
-
 }

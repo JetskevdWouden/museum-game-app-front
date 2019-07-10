@@ -4,11 +4,13 @@ import currentUser from './currentUser'
 import newUser from './newUser'
 import gamePaintings from './gamePaintings'
 import games from './games'
+import guessedAnswer from './guessedAnswer'
 
 export default combineReducers ({
     users,
     currentUser,
     newUser,
     gamePaintings,
-    games
+    games,
+    guessedAnswer
 })

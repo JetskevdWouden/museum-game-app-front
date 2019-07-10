@@ -2,9 +2,6 @@ import React from 'react'
 import './GameImage.css'
 
 export default function GameImage (props) {
-    
-        
-        
         return (
             <div className='imageContainer'>
                 <div className='imageDiv'>
