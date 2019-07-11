@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import LoginForm from './LoginForm';
 import { login } from '../actions/auth'
-import { Redirect } from 'react-router-dom' 
 
 
 export class LoginFormContainer extends Component {
-    state = { username: '', password: '', redirect: false}
+    state = { username: '', password: ''}
 
     onSubmit = (event) => {
         event.preventDefault()
@@ -19,16 +18,16 @@ export class LoginFormContainer extends Component {
         })
     }
 
-    setRedirect = () => {
-        this.setState({
-          redirect: true
-        })
-      }
+    redirectToSignUp = () => {
+        return this.props.history.push('/sign-up')
+    }
 
-    renderRedirect = () => {
-        if (this.state.redirect) {
-        return <Redirect to='/sign-up' />
-        }
+    redirectToGame = () => {
+        return this.props.history.push('/gamelist')
+    }
+
+    redirectToGameInstruction = () => {
+        return this.props.history.push('/instructions')
     }
     
     render() {
@@ -38,8 +37,9 @@ export class LoginFormContainer extends Component {
                     values={this.state}
                     onClick={this.onClick}
                 />
-                    {this.renderRedirect()}
-                    <button onClick={this.setRedirect}>Sign Up</button>
+                    <button onClick={this.redirectToSignUp}>Sign Up</button>
+                    <button onClick={this.redirectToGame}>Start the Game</button>
+                    <button onClick={this.redirectToGameInstruction}>How does the game work?</button>
                 </div>
         }
 }
