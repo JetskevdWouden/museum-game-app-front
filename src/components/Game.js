@@ -6,20 +6,25 @@ export default function Game(props) {
         return (
             <div className='gameContainer'>
                 
-                 <ul className='listOfanswers'>
-                    {props.paintings
-                        .map(painting =>
-                            <li 
-                            key={painting.id} 
-                            id={painting.id} 
-                            className={props.userAnswer === painting.title ? 'active answer' : 'answer'}
-                            onClick={props.checkAnswer}>
-                                {painting.title}
-                            </li>
-                        )}
-                 </ul>
-                 <button onClick={props.onSubmit} className='button'>send answer</button>
+                
+                    <ul className='listOfanswers'>
+                        {props.paintings
+                            .map(painting =>
+                                <li 
+                                key={painting.id} 
+                                id={painting.id} 
+                                className={props.userAnswer === painting.title ? 'active answer' : 'answer'}
+                                onClick={props.checkAnswer}>
+                                    {painting.title}
+                                </li>
+                            )}
+                    </ul>
+                    <button onClick={props.onSubmit} className='button'>send answer</button>
+                 
+                
+                
             </div>
+        
         )
 
 }

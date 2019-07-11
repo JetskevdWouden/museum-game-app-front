@@ -1,10 +1,21 @@
 export const GET_LIFES = 'GET_LIFES'
 
-function getLifes(payload){
+export function getLifes(number){
+    const payload=  number -1
     return {
         type: GET_LIFES,
-        payload: {
-            lifes: payload,
-        }
+        payload
+    }
+}
+
+export const GET_POINTS = 'GET_POINTS'
+
+export function getPoints(state,lifes, points){
+
+    const payload = state + points + (lifes * points)
+        
+    return {
+        type: GET_POINTS,
+        payload
     }
 }
