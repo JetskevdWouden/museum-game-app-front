@@ -20,25 +20,27 @@ class GameContainer extends Component {
         return this.props.guessedAnswer(titleName)
     }
     onSubmit = () => {
+        let currentPoints = this.props.points || 0
         if (this.props.userAnswer === this.props.answer.title) {
-            return this.props.getPoints(this.props.lifes, 10)
+            return this.props.getPoints(currentPoints, this.props.lifes, 10)
         }
         else {
-            return this.props.getPoints(this.props.lifes, 1)
+            return this.props.getPoints(currentPoints, this.props.lifes, 1)
         }
     }
+
     revealImage =(event) => {
         if (this.props.lifes > 0){
             event.target.style.visibility = 'hidden'
             this.props.getLifes(this.props.lifes)
         }
     }
+
     onNext = (event) => {
         this.componentDidMount()
     }
 
     render() {
-        
         return (
             <div>
                {this.props.lifes!==undefined && <Lifes lifes={this.props.lifes} />}
@@ -62,7 +64,7 @@ class GameContainer extends Component {
 }
 
 const mapStatetoProps = (state) => {
-    console.log(state)
+    
     return {
         paintings: state.gamePaintings.paintings,
         answer: state.gamePaintings.correctAnswer,
