@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SignUpForm from './SignUpForm';
 import { signUp } from '../actions/auth'
-import { Redirect } from 'react-router-dom'
 
 
 export class SignUpFormContainer extends Component {
@@ -10,7 +9,6 @@ export class SignUpFormContainer extends Component {
       username: '', 
       password: '', 
       password_confirmation: '',
-      redirect: false
     }
 
     onSubmit = (event) => {
@@ -28,26 +26,18 @@ export class SignUpFormContainer extends Component {
         })
     }
 
-    setRedirect = () => {
-        this.setState({
-          redirect: true
-        })
-      }
-
-    renderRedirect = () => {
-        if (this.state.redirect) {
-        return <Redirect to='/' />
-        }
+    redirecToHome = () => {
+      return this.props.history.push('/')
     }
     
     render() {
-        return <div><SignUpForm
+        return <div>
+                  <SignUpForm
                     onSubmit={this.onSubmit} 
                     onChange={this.onChange} 
                     values={this.state}
                 />
-                {this.renderRedirect()}
-                <button onClick={this.setRedirect}>Click here to log in</button>
+                <button onClick={this.redirecToHome}>Click here to log in</button>
                 </div>
     }
 }
