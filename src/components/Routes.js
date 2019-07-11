@@ -16,6 +16,8 @@ export default function Routes() {
       <Route path="/" exact component={ImageListContainer} />
       <Route path="/game" exact component={GameContainer} />
       <Route path="/gamelist" exact component={GameListContainer} />
+      <Route path="/instructions"/>
+      {/* //instructions need to be made still */}
       <Route exact path='/scoreboard' component={ScoreBoardContainer} />
     </div>
   )
