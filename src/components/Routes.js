@@ -28,8 +28,10 @@ function Routes(props) {
       <Route path="/gamelist" exact component={GameListContainer} />
       <Route path="/instructions" exact component={InstructionsContainer}/>
       <Route exact path='/scoreboard' component={ScoreBoardContainer} />
+      <Route exact path='/scoreboard/:id' component={ScoreBoardContainer} />
         </Switch>
       }
+
     </div>
   )
 }
