@@ -6,7 +6,7 @@ import ScoreBoardList from './ScoreBoardList';
 
 class ScoreBoardContainer extends React.Component {
 
-    basUrl = 'http://localhost:5000'
+    basUrl = 'https://protected-eyrie-79199.herokuapp.com'
     // //basUrl = heroku base link
 
     //streamUrl = `${this.basUrl}/stream/:gameId`
@@ -20,8 +20,6 @@ class ScoreBoardContainer extends React.Component {
     }
 
     render() {
-        console.log('scoreBoardContainer render test!')
-        console.log()
         return (
             <ScoreBoardList userScores={this.props.userScores} />
         )
