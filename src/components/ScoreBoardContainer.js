@@ -1,17 +1,21 @@
 import React from 'react';
-//import * as request from 'superagent';
 import { connect } from 'react-redux';
 import { onEvent } from '../actions/scoreBoard';
 import ScoreBoardList from './ScoreBoardList';
 
 class ScoreBoardContainer extends React.Component {
 
+<<<<<<< HEAD
+    //basUrl = 'http://localhost:5000'
+    basUrl = 'https://protected-eyrie-79199.herokuapp.com'
+=======
     basUrl = 'https://protected-eyrie-79199.herokuapp.com'
     // //basUrl = heroku base link
+>>>>>>> eafcae03aa88cd176da844cb8536a7863c3438aa
 
-    //streamUrl = `${this.basUrl}/stream/:gameId`
-    streamUrl = `${this.basUrl}/stream/5`
-    // //gameId = this.streamUrl.params.gameId //right? --> console.log
+    gameId = this.props.match.params.id
+
+    streamUrl = `${this.basUrl}/stream/${this.gameId}`
 
     source = new EventSource(this.streamUrl)
 
@@ -35,5 +39,4 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = { onEvent }
 
-//export default ScoreBoardContainer;
 export default connect(mapStateToProps, mapDispatchToProps)(ScoreBoardContainer)
