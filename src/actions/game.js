@@ -10,8 +10,10 @@ export function getLifes(number){
 
 export const GET_POINTS = 'GET_POINTS'
 
-export function getPoints(lifes, points){
-    const payload = points + (lifes * points)
+export function getPoints(state,lifes, points){
+
+    const payload = state + points + (lifes * points)
+        
     return {
         type: GET_POINTS,
         payload
