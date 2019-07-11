@@ -5,7 +5,7 @@ import LoginFormContainer from './LoginFormContainer';
 import SignUpFormContainer from './SignUpFormContainer';
 import GameContainer from './GameContainer';
 import GameListContainer from './GameListContainer'
-
+import ScoreBoardContainer from './ScoreBoardContainer';
 
 export default function Routes() {
   return (
@@ -16,7 +16,7 @@ export default function Routes() {
       <Route path="/" exact component={ImageListContainer} />
       <Route path="/game" exact component={GameContainer} />
       <Route path="/gamelist" exact component={GameListContainer} />
-
+      <Route exact path='/scoreboard' component={ScoreBoardContainer} />
     </div>
   )
 }
