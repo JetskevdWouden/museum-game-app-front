@@ -19,8 +19,6 @@ class ScoreBoardContainer extends React.Component {
     }
 
     render() {
-        console.log('scoreBoardContainer render test!')
-        console.log("GAMEID", this.gameId)
         return (
             <ScoreBoardList userScores={this.props.userScores} />
         )
