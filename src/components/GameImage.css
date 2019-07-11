@@ -49,7 +49,7 @@
     margin: 0;
     padding: 0;
     background: url('./dark-mosaic.png') repeat rgba(225, 225, 225, 0.90) center center;
-    width: 33.33%;
-    height: 34%;
+    width: 16.66%;
+    height: 16.66%;
     z-index: 100;
 }
