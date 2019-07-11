@@ -23,7 +23,7 @@ export default function ScoreList(props) {
     const scores = props.userScores
 
 
-    console.log("USER ONE?", scores[0])
+    //console.log("USER ONE?", scores[0])
 
     //get players --> user
     //get scores of each player

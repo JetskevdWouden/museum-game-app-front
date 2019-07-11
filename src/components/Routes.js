@@ -14,9 +14,15 @@ export default function Routes() {
       <Route path="/" exact component={LoginFormContainer} />
       <Route path="/sign-up" exact component={SignUpFormContainer} />
       <Route path="/" exact component={ImageListContainer} />
-      <Route path="/game" exact component={GameContainer} />
+      <Route path="/game/:id" exact component={GameContainer} />
       <Route path="/gamelist" exact component={GameListContainer} />
+<<<<<<< HEAD
+      <Route exact path='/scoreboard/:id' component={ScoreBoardContainer} />
+=======
+      <Route path="/instructions"/>
+      {/* //instructions need to be made still */}
       <Route exact path='/scoreboard' component={ScoreBoardContainer} />
+>>>>>>> eafcae03aa88cd176da844cb8536a7863c3438aa
     </div>
   )
 }
