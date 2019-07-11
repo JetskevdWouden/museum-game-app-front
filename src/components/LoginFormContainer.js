@@ -37,9 +37,9 @@ export class LoginFormContainer extends Component {
                     values={this.state}
                     onClick={this.onClick}
                 />
-                    <button onClick={this.redirectToSignUp}>Sign Up</button>
-                    <button onClick={this.redirectToGame}>Start the Game</button>
-                    <button onClick={this.redirectToGameInstruction}>How does the game work?</button>
+                    <button className='button' onClick={this.redirectToSignUp}>Sign Up</button>
+                    <button className='button' onClick={this.redirectToGame}>Start the Game</button>
+                    <button className='button' onClick={this.redirectToGameInstruction}>How does the game work?</button>
                 </div>
         }
 }

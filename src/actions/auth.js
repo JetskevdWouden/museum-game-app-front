@@ -3,7 +3,8 @@ import request from 'superagent'
 export const LOGIN_SUCCES = 'LOGIN_SUCCES'
 export const SIGNUP_SUCCES = 'SIGNUP_SUCCES'
 
-const baseUrl = 'http://localhost:5000'
+// const baseUrl = 'http://localhost:5000'
+const baseUrl = 'https://protected-eyrie-79199.herokuapp.com'
 
 const loginSucces = JWT => ({
   type: LOGIN_SUCCES,
@@ -11,6 +12,7 @@ const loginSucces = JWT => ({
 })
 
 export const login = (username, password) => dispatch => {
+  console.log('logged in')
   request 
     .post(`${baseUrl}/login`)
     .send({ username, password })
@@ -26,7 +28,7 @@ const signUpSucces = (newUser) => ({
 })
 
 export const signUp = (username, password, password_confirmation) => dispatch => {
-  console.log('hello')
+  console.log('signed up')
   request 
     .post(`${baseUrl}/sign-up`)
     .send({ username, password, password_confirmation })
