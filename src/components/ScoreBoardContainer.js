@@ -5,13 +5,10 @@ import ScoreBoardList from './ScoreBoardList';
 
 class ScoreBoardContainer extends React.Component {
 
-<<<<<<< HEAD
-    //basUrl = 'http://localhost:5000'
-    basUrl = 'https://protected-eyrie-79199.herokuapp.com'
-=======
+
     basUrl = 'https://protected-eyrie-79199.herokuapp.com'
     // //basUrl = heroku base link
->>>>>>> eafcae03aa88cd176da844cb8536a7863c3438aa
+
 
     gameId = this.props.match.params.id
 
