@@ -1,17 +1,29 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import * as request from 'superagent';
+
 import Game from './Game'
 import Lifes from './Lifes';
 import GameImage from './GameImage';
+import ScoreBoardList from './ScoreBoardList';
+
 import './Game.css'
 import './Button.css'
+
 import { getAnswers } from '../actions/getPaintings'
 import { guessedAnswer } from '../actions/checkAnswer'
-import { getLifes } from '../actions/game'
-import { getPoints } from '../actions/game'
-import { connect } from 'react-redux'
+import { getLifes, getPoints } from '../actions/game'
+import { onEvent, onNext } from '../actions/scoreBoard'
+
 
 class GameContainer extends Component {
+    basUrl = 'https://protected-eyrie-79199.herokuapp.com'
+    streamUrl = `${this.basUrl}/stream/4`
+    source = new EventSource(this.streamUrl)
+
     componentDidMount() {
+        // property of event source and get an event everytime something changes
+        this.source.onmessage = this.props.onEvent
         this.props.getAnswers()
         this.props.getLifes(7)
     }
@@ -22,11 +34,12 @@ class GameContainer extends Component {
     onSubmit = () => {
         let currentPoints = this.props.points || 0
         if (this.props.userAnswer === this.props.answer.title) {
-            return this.props.getPoints(currentPoints, this.props.lifes, 10)
+            this.props.getPoints(currentPoints, this.props.lifes, 10)
         }
         else {
-            return this.props.getPoints(currentPoints, this.props.lifes, 1)
+            this.props.getPoints(currentPoints, this.props.lifes, 1)
         }
+       
     }
 
     revealImage =(event) => {
@@ -37,12 +50,23 @@ class GameContainer extends Component {
     }
 
     onNext = (event) => {
-        this.componentDidMount()
+        //this.componentDidMount()
+        const userId = 1
+        
+        this.props.onNext(userId, this.props.points)
+        const data = this.props.userScores
+        
+        request
+            .put(`${this.basUrl}/score/4`)
+            .send({data})
+            .then(response =>{console.log(response, 'response')})
+            .catch(console.error)
     }
 
     render() {
         return (
             <div>
+                <ScoreBoardList userScores={this.props.userScores} />
                {this.props.lifes!==undefined && <Lifes lifes={this.props.lifes} />}
                 {this.props.answer &&
                 <div className='currentSession'>
@@ -57,20 +81,19 @@ class GameContainer extends Component {
                         <button className='button' onClick={this.onNext}>Next session</button>
                     </div>
                 }
-                
             </div>
         )
     }
 }
 
 const mapStatetoProps = (state) => {
-    
     return {
         paintings: state.gamePaintings.paintings,
         answer: state.gamePaintings.correctAnswer,
         userAnswer: state.guessedAnswer.title,
         lifes: state.guessedAnswer.lifes,
-        points: state.guessedAnswer.points
+        points: state.guessedAnswer.points,
+        userScores: state.scoreBoard
     }
 }
-export default connect(mapStatetoProps, { getAnswers, guessedAnswer, getLifes, getPoints })(GameContainer)
+export default connect(mapStatetoProps, { getAnswers, guessedAnswer, getLifes, getPoints, onEvent, onNext })(GameContainer)

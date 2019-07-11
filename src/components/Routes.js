@@ -14,7 +14,7 @@ export default function Routes() {
       <Route path="/" exact component={LoginFormContainer} />
       <Route path="/sign-up" exact component={SignUpFormContainer} />
       <Route path="/" exact component={ImageListContainer} />
-      <Route path="/game" exact component={GameContainer} />
+      <Route path="/game/:id" exact component={GameContainer} />
       <Route path="/gamelist" exact component={GameListContainer} />
       <Route path="/instructions"/>
       {/* //instructions need to be made still */}
