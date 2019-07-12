@@ -5,13 +5,14 @@ export default function SignUpForm(props) {
         <div>
             <div id='signUpForm'>
             No account? Sign up please!
-                <form onSubmit={props.onSubmit}>
+                <form onSubmit={props.onSubmit} className='submitForm'>
                     <input 
                         type='text' 
                         name='username'
                         placeholder='Enter your username'
                         onChange={props.onChange}
                         value={props.values.username}
+                        
                     />
                     <input
                         type='text' 

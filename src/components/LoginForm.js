@@ -4,7 +4,7 @@ import './LoginForm.css'
 export default function LoginForm(props) {
     return (
         <div>
-            <div id='loginForm'>
+            <div >
             Already have an account?
                 <form onSubmit={props.onSubmit}>
                     <input 
