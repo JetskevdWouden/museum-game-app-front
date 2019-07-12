@@ -3,7 +3,7 @@ import React from 'react'
 function renderScores(scores) {
         const userOne = scores[0]
         const userTwo = scores[1]
-    if (scores.length === 0 && !userTwo.id) {
+    if (scores.length === 0 || !userTwo) {
         return "Waiting for the next user..."
     } else {
         
