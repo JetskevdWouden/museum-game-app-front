@@ -1,0 +1,40 @@
+.answer {
+    display: block;
+    background: #2980b9;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 10px auto;
+    max-width: 500px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+}
+.active{
+    background:#3498db;
+    color: #fff
+}
+.answer input{
+    margin-right: 20px
+}
+.listOfanswers{padding: 0; padding-top: 20px; margin: 0}
+.gameContainer{text-align: center;
+padding-bottom: 30px}
+.scoreBoard{
+    background: white;
+    border: 1px solid #e1e7eb;
+    color: #3498db;
+    width: 200px; 
+    padding: 20px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 5px;
+
+}
+.Lifes{
+    margin: 0 auto;
+    text-align: center
+}
+#endedSession{ text-align: center; padding-bottom: 30px}
+#endedSession h2{ color: #34495e; text-align: center}
+#endedSession .button{ margin: 0 auto}
