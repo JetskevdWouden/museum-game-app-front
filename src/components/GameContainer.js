@@ -69,12 +69,15 @@ class GameContainer extends Component {
             this.componentDidMount()
     }
 
+    redirectToHome = () => {
+        return this.props.history.push('/')
+    }
+
     render() {
         return (
             <div>
                
-
-               
+               <button className='button' onClick={this.redirectToHome}>QUIT GAME</button>
                 <ScoreBoardList userScores={this.props.userScores} user={this.props.currentUser.userId} />
             
                 {
