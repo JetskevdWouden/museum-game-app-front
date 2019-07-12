@@ -14,14 +14,14 @@ export default function SignUpForm(props) {
                         value={props.values.username}
                     />
                     <input
-                        type='text' 
+                        type='password' 
                         name='password'
                         placeholder='Enter your password'
                         onChange={props.onChange}
                         value={props.values.password}
                     />
                     <input
-                        type='text' 
+                        type='password'
                         name='password_confirmation'
                         placeholder='Confirm you password'
                         onChange={props.onChange}

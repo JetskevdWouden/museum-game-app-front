@@ -15,7 +15,7 @@ export default function LoginForm(props) {
                         value={props.values.username}
                     />
                     <input
-                        type='text' 
+                        type='password' 
                         name='password'
                         placeholder='Enter your password'
                         onChange={props.onChange}
