@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SignUpForm from './SignUpForm';
 import { signUp } from '../actions/auth'
+import './signup.css'
 
 
 export class SignUpFormContainer extends Component {
@@ -31,7 +32,7 @@ export class SignUpFormContainer extends Component {
     }
     
     render() {
-        return <div>
+        return <div className='signupFormContainer'>
                   <SignUpForm
                     onSubmit={this.onSubmit} 
                     onChange={this.onChange} 
