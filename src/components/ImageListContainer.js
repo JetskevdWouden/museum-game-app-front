@@ -17,7 +17,6 @@ class ImageListContainer extends Component {
     render() {
         return (
             <div>
-                <button className='button' onClick={this.redirectToGameInstruction}>How does the game work?</button>
                 <ImageList paintings={this.props.paintings} />
             </div>
         )
