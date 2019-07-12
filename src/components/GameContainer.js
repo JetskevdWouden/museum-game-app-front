@@ -18,7 +18,8 @@ import { onEvent, onNext } from '../actions/scoreBoard'
 
 class GameContainer extends Component {
     basUrl = 'https://protected-eyrie-79199.herokuapp.com'
-    streamUrl = `${this.basUrl}/stream/4`
+    gameId = this.props.match.params.id
+    streamUrl = `${this.basUrl}/stream/${this.gameId}`
     source = new EventSource(this.streamUrl)
 
     componentDidMount() {
@@ -50,20 +51,21 @@ class GameContainer extends Component {
     }
 
     onNext = (event) => {
-        //this.componentDidMount()
+        this.componentDidMount()
         const userId = 1
         
         this.props.onNext(userId, this.props.points)
         const data = this.props.userScores
         console.log(data)
         request
-            .put(`${this.basUrl}/score/4`)
+            .put(`${this.basUrl}/score/${this.gameId}`)
             .send({data})
             .then(response =>{console.log(response, 'response')})
             .catch(console.error)
     }
 
     render() {
+        console.log("GAME ID?", this.gameId)
         return (
             <div>
                 <ScoreBoardList userScores={this.props.userScores} />
