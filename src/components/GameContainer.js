@@ -19,7 +19,11 @@ import { onEvent, onNext } from '../actions/scoreBoard'
 class GameContainer extends Component {
     // basUrl = 'https://protected-eyrie-79199.app.com'
     basUrl = "http://localhost:5000"
-    streamUrl = `${this.basUrl}/stream/4`
+
+    gameId = this.props.match.params.id
+
+    streamUrl = `${this.basUrl}/stream/${this.gameId}`
+    //streamUrl = `${this.basUrl}/stream/4`
     source = new EventSource(this.streamUrl)
 
     componentDidMount() {
@@ -58,7 +62,8 @@ class GameContainer extends Component {
         this.props.onNext(userId, this.props.points)
 
         request
-            .put(`${this.basUrl}/score/4`)
+            //.put(`${this.basUrl}/score/4`)
+            .put(`${this.basUrl}/score/${this.gameId}`)
             .send({ score: this.props.points, userId })
             .then(response => { console.log(response, 'response') })
             .catch(console.error)
