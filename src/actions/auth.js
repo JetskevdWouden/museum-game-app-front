@@ -1,12 +1,10 @@
 import request from 'superagent'
+import baseUrl from "../constants"
 
 export const LOGIN_SUCCES = 'LOGIN_SUCCES'
 export const SIGNUP_SUCCES = 'SIGNUP_SUCCES'
 
 // const baseUrl = 'http://localhost:5000'
-
-const baseUrl = 'https://protected-eyrie-79199.herokuapp.com'
-
 const loginSucces = JWT => ({
   type: LOGIN_SUCCES,
   JWT
