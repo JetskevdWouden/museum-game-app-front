@@ -14,6 +14,7 @@ import PlayGameButton from './PlayGameButton';
 function Routes(props) {
   return (
     <div>
+
      {!props.authenticated && 
         <div>
           <Route path="/" exact component={LoginFormContainer} />
@@ -30,6 +31,7 @@ function Routes(props) {
           <Route path='/scoreboard' exact component={ScoreBoardContainer} />
         </Switch>
       }
+
 
       <Route path="/" exact component={ImageListContainer} />
     </div>
