@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import {withRouter} from 'react-router'
 import { connect } from 'react-redux'
 import ImageListContainer from './ImageListContainer';
@@ -7,7 +7,6 @@ import LoginFormContainer from './LoginFormContainer';
 import SignUpFormContainer from './SignUpFormContainer';
 import GameContainer from './GameContainer';
 import GameListContainer from './GameListContainer'
-import InstructionsContainer from './InstructionsContainer'
 import PlayGameButton from './PlayGameButton';
 
 function Routes(props) {
@@ -18,6 +17,8 @@ function Routes(props) {
         <div>
           <Route path="/" exact component={LoginFormContainer} />
           <Route path="/sign-up" exact component={SignUpFormContainer} />
+          <Route exact path="/gamelist" render={() => (<Redirect to="/" />)} />
+          <Route exact path="/game/:id" render={() => (<Redirect to="/" />)} />
         </div>
      }
 
@@ -31,7 +32,6 @@ function Routes(props) {
 
 
       <Route path="/" exact component={ImageListContainer} />
-      <Route path="/instructions" exact component={InstructionsContainer}/>
     </div>
   )
 }
