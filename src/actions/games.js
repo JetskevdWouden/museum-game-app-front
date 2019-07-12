@@ -17,7 +17,6 @@ export const createGame = () => (dispatch, getState) => {
     .post(`${baseUrl}/new-game`)
     .set('Authorization', `Bearer ${jwt}`)
     .then(response => {
-      console.log('response test:', response)
       dispatch(gameCreateSuccess(response.body.game))
       return response
     })

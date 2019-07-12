@@ -13,7 +13,6 @@ const loginSucces = JWT => ({
 })
 
 export const login = (username, password) => dispatch => {
-  console.log('logged in')
   request 
     .post(`${baseUrl}/login`)
     .send({ username, password })
@@ -29,7 +28,6 @@ const signUpSucces = (newUser) => ({
 })
 
 export const signUp = (username, password, password_confirmation) => dispatch => {
-  console.log('signed up')
   request 
     .post(`${baseUrl}/sign-up`)
     .send({ username, password, password_confirmation })

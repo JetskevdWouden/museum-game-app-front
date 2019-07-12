@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function Game(props) {
    
-    console.log(props.userAnswer)
         return (
             <div className='gameContainer'>
                 

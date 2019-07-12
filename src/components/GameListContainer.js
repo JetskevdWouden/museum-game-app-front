@@ -10,14 +10,12 @@ componentDidMount() {
 }
 
 onClickNewGame = (event) => {
-  console.log('new game made')
   event.preventDefault()
   this
     .props
     .createGame()
     .then(response => {
       const { id } = response.body.game
-      console.log('gameId test:', response.body.game.id)
       this
         .props
         .getOneGame(id)
@@ -40,7 +38,6 @@ onClickGame = (event) => {
 
 
   render() {
-    console.log("HELLO?!",this.props.games)
     return (
       <div>
         <GameList 
