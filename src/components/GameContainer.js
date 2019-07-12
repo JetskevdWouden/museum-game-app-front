@@ -17,8 +17,8 @@ import { onEvent, onNext } from '../actions/scoreBoard'
 
 
 class GameContainer extends Component {
-    // basUrl = 'https://protected-eyrie-79199.app.com'
-    basUrl = "http://localhost:5000"
+    basUrl = 'https://protected-eyrie-79199.app.com'
+    //basUrl = "http://localhost:5000"
 
     gameId = this.props.match.params.id
 
