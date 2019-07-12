@@ -2,7 +2,6 @@ import React from 'react'
 
 
 export default function GameList(props) {
-  console.log("ARE THESE MY GAMES??", props)
   return (
     <div>
       <div>

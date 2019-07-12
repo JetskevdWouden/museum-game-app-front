@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Redirect, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import {withRouter} from 'react-router'
 import { connect } from 'react-redux'
 import ImageListContainer from './ImageListContainer';
@@ -26,12 +26,12 @@ function Routes(props) {
           <Route path="/" exact component={PlayGameButton} />
           <Route path="/game/:id" exact component={GameContainer} />
           <Route path="/gamelist" exact component={GameListContainer} />
-          <Route path="/instructions" exact component={InstructionsContainer}/>
           <Route path='/scoreboard' exact component={ScoreBoardContainer} />
         </Switch>
       }
 
       <Route path="/" exact component={ImageListContainer} />
+      <Route path="/instructions" exact component={InstructionsContainer}/>
     </div>
   )
 }
