@@ -72,7 +72,11 @@ class GameContainer extends Component {
     render() {
         return (
             <div>
+               
+
+               
                 <ScoreBoardList userScores={this.props.userScores} />
+            
                 {
                     this.props.lifes!==undefined &&
                     <Lifes lifes={this.props.lifes} />

@@ -1,19 +1,22 @@
 import React from 'react'
 
 function renderScores(scores) {
-    if (scores.length === 0) {
-        return "Loading scores..."
-    } else {
         const userOne = scores[0]
         const userTwo = scores[1]
+    if (scores.length === 0 && !userTwo.id) {
+        return "Waiting for the next user..."
+    } else {
+        
 
         return (
+            
         <ul>   
             <li>PLAYER: {userOne.id}</li>
             <li>SCORE: {userOne.score}</li>
             <li>PLAYER: {userTwo.id}</li>
             <li>SCORE: {userTwo.score}</li>
         </ul>
+    
         )
     }
 }
