@@ -3,13 +3,34 @@
     clear: both;
     width: 90%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
 }
 .pictures{
     display: block;
     max-width: 200px;
     margin: 20px;
-    float: left;
+    
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #34495e;
+
 }
 .pictures img{
-    width: 100%
+    width: 100%;
+    border: 5px solid #95a5a6;
 }
+.header{ 
+    
+min-height: 500px;
+padding-top: 1px;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fc6f99+1,fcaa6f+100 */
+background-color: #e74c3c; /* Old browsers */
+
+background-attachment: fixed;
+background-image: url(./museum.png);
+
+}
+.header h1{ text-align: center; color: #fff; margin-top: 250px}

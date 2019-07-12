@@ -4,7 +4,9 @@ export default function ImageList(props) {
     const paintings = props.paintings
     return (
         <div>
+            <div className='header'>
             <h1>Hello, welcome to the Museum Game!</h1>
+            </div>
             <ul className='paintingList'>
                 {paintings && 
                     paintings
