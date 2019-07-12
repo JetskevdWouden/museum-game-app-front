@@ -27,7 +27,6 @@ function Routes(props) {
           <Route path="/" exact component={PlayGameButton} />
           <Route path="/game/:id" exact component={GameContainer} />
           <Route path="/gamelist" exact component={GameListContainer} />
-          <Route path="/instructions" exact component={InstructionsContainer}/>
           <Route path='/scoreboard' exact component={ScoreBoardContainer} />
         </Switch>
       }
