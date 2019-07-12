@@ -22,13 +22,6 @@ export class LoginFormContainer extends Component {
         return this.props.history.push('/sign-up')
     }
 
-    redirectToGame = () => {
-        return this.props.history.push('/gamelist')
-    }
-
-    redirectToGameInstruction = () => {
-        return this.props.history.push('/instructions')
-    }
     
     render() {
         return <div><LoginForm 
@@ -38,8 +31,6 @@ export class LoginFormContainer extends Component {
                     onClick={this.onClick}
                 />
                     <button className='button' onClick={this.redirectToSignUp}>Sign Up</button>
-                    <button className='button' onClick={this.redirectToGame}>Start the Game</button>
-                    <button className='button' onClick={this.redirectToGameInstruction}>How does the game work?</button>
                 </div>
         }
 }
