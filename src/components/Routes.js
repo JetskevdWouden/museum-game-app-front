@@ -15,20 +15,21 @@ function Routes(props) {
     <div>
      {!props.authenticated && 
         <Switch>
+          {/* <Route path="/" exact component={ImageListContainer} /> */}
           <Route path="/" exact component={LoginFormContainer} />
           <Route path="/sign-up" exact component={SignUpFormContainer} />
-          <Route path="" render={() => <Redirect to="/sign-up" />}></Route>
+          {/* <Route path="" render={() => <Redirect to="/sign-up" />}></Route> */}
         </Switch>
     }
 
       {props.authenticated && 
         <Switch>
-      <Route path="/" exact component={ImageListContainer} />
+      <Route path="/" exact component={LoginFormContainer} />
+      {/* <Route path="/" exact component={ImageListContainer} /> */}
       <Route path="/game/:id" exact component={GameContainer} />
       <Route path="/gamelist" exact component={GameListContainer} />
       <Route path="/instructions" exact component={InstructionsContainer}/>
-      <Route exact path='/scoreboard' component={ScoreBoardContainer} />
-      <Route exact path='/scoreboard/:id' component={ScoreBoardContainer} />
+      <Route path='/scoreboard' exact component={ScoreBoardContainer} />
         </Switch>
       }
 
