@@ -10,7 +10,7 @@ const gameCreateSuccess = payload => ({
 })
 
 export const createGame = () => (dispatch, getState) => {
-  const jwt = getState().currentUser
+  const {jwt} = getState().currentUser
   return request
     .post(`${baseUrl}/new-game`)
     .set('Authorization', `Bearer ${jwt}`)
@@ -31,7 +31,7 @@ const getOneGameSucces = payload => ({
 })
 
 export const getOneGame = (id) => (dispatch, getState) => {
-  const jwt = getState().currentUser
+  const {jwt} = getState().currentUser
   return request(`${baseUrl}/game/${id}`)
     .set('Authorization', `Bearer ${jwt}`)
     .then(response => {
@@ -51,7 +51,7 @@ const getGamesSucces = payload => ({
 })
 
 export const getGames = () => (dispatch, getState) => {
-  const jwt = getState().currentUser
+  const {jwt} = getState().currentUser
   request
     .get(`${baseUrl}/open-games`)
     .set('Authorization', `Bearer ${jwt}`)

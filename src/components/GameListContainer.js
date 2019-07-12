@@ -36,7 +36,7 @@ export class GameListContainer extends Component {
   onClickGame = (event) => {
     event.preventDefault()
     const gameId = event.target.value
-    const jwt = this.props.currentUser
+    const {jwt} = this.props.currentUser
 
     request
       .put(`${this.basUrl}/join-game`)
