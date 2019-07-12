@@ -14,6 +14,7 @@ export function getPoints(state,lifes, points){
 
     const payload = state + points + (lifes * points)
         
+    console.log('payload test:', payload)
     return {
         type: GET_POINTS,
         payload

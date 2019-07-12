@@ -53,16 +53,14 @@ class GameContainer extends Component {
     }
 
     onNext = (event) => {
-        const { userScores } = this.props
         const userId = 1
+        console.log('this.props.points test:', this.props.points)
         this.props.onNext(userId, this.props.points)
-        const currentUser = userScores.find(userData=> userData.userId === userId)
-        currentUser.score = this.props.points
-        console.log("userScores test:", userScores)
+
         request
             .put(`${this.basUrl}/score/4`)
-            .send({ data: userScores })
-            .then(response =>{console.log(response, 'response')})
+            .send({ score: this.props.points, userId })
+            .then(response => { console.log(response, 'response') })
             .catch(console.error)
     }
 
