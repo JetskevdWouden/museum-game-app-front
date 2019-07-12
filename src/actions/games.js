@@ -1,7 +1,5 @@
 import request from 'superagent'
-
-// const baseUrl = 'http://localhost:5000'
-const baseUrl = 'https://protected-eyrie-79199.herokuapp.com'
+import baseUrl from "../constants"
 
 // CREATE A GAME
 export const GAME_CREATE_SUCCES = 'GAME_CREATE_SUCCES'

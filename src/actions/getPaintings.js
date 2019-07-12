@@ -1,4 +1,5 @@
 import * as request from 'superagent'
+import baseUrl from "../constants"
 
 export const GET_PAINTINGS = 'GET_PAINTINGS'
 
@@ -13,7 +14,7 @@ function getAllPaintings(payload){
 
 //fetches an array of all paintings
 export function getPaintings() {
-    const url = 'https://protected-eyrie-79199.herokuapp.com/paintings'
+    const url = `${baseUrl}/paintings`
     return async function(dispatch){
         const response = await request(url)
         const {paintings} = response.body
@@ -36,7 +37,7 @@ function getAllAnswers(payload){
 
 //fetches an array of all paintings
 export function getAnswers() {
-    const url = 'https://protected-eyrie-79199.herokuapp.com/game-paintings'
+    const url = `${baseUrl}/game-paintings`
     return async function(dispatch){
         const response = await request(url)
         const {paintings} = response.body

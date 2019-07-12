@@ -7,7 +7,6 @@ import LoginFormContainer from './LoginFormContainer';
 import SignUpFormContainer from './SignUpFormContainer';
 import GameContainer from './GameContainer';
 import GameListContainer from './GameListContainer'
-import ScoreBoardContainer from './ScoreBoardContainer';
 import InstructionsContainer from './InstructionsContainer'
 import PlayGameButton from './PlayGameButton';
 
@@ -27,7 +26,6 @@ function Routes(props) {
           <Route path="/" exact component={PlayGameButton} />
           <Route path="/game/:id" exact component={GameContainer} />
           <Route path="/gamelist" exact component={GameListContainer} />
-          <Route path='/scoreboard' exact component={ScoreBoardContainer} />
         </Switch>
       }
 
