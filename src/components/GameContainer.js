@@ -57,8 +57,7 @@ class GameContainer extends Component {
     }
 
     onNext = (event) => {
-        const userId = 1
-        console.log('this.props.points test:', this.props.points)
+        const userId = this.props.currentUser.userId
         this.props.onNext(userId, this.props.points)
 
         request
@@ -67,6 +66,7 @@ class GameContainer extends Component {
             .send({ score: this.props.points, userId })
             .then(response => { console.log(response, 'response') })
             .catch(console.error)
+            this.componentDidMount()
     }
 
     render() {
@@ -75,7 +75,7 @@ class GameContainer extends Component {
                
 
                
-                <ScoreBoardList userScores={this.props.userScores} />
+                <ScoreBoardList userScores={this.props.userScores} user={this.props.currentUser.userId} />
             
                 {
                     this.props.lifes!==undefined &&
@@ -118,7 +118,8 @@ const mapStatetoProps = (state) => {
         userAnswer: state.guessedAnswer.title,
         lifes: state.guessedAnswer.lifes,
         points: state.guessedAnswer.points,
-        userScores: state.scoreBoard
+        userScores: state.scoreBoard,
+        currentUser: state.currentUser
     }
 }
 export default connect(mapStatetoProps, { getAnswers, guessedAnswer, getLifes, getPoints, onEvent, onNext })(GameContainer)

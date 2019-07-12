@@ -5,9 +5,12 @@ export const LOGIN_SUCCES = 'LOGIN_SUCCES'
 export const SIGNUP_SUCCES = 'SIGNUP_SUCCES'
 
 // const baseUrl = 'http://localhost:5000'
-const loginSucces = JWT => ({
+const loginSucces = payload => ({
   type: LOGIN_SUCCES,
-  JWT
+  payload: {
+    jwt: payload.JWT, userId: payload.userId
+  }
+
 })
 
 export const login = (username, password) => dispatch => {
@@ -15,7 +18,7 @@ export const login = (username, password) => dispatch => {
     .post(`${baseUrl}/login`)
     .send({ username, password })
     .then(response => {
-      dispatch(loginSucces(response.body.JWT))
+      dispatch(loginSucces(response.body))
     })
     .catch(console.error)
 }
