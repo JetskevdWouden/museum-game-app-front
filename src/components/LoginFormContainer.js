@@ -24,13 +24,18 @@ export class LoginFormContainer extends Component {
 
     
     render() {
-        return <div><LoginForm 
+        return <div id='loginForm'>
+            <div className='float'>
+            <LoginForm 
                     onSubmit={this.onSubmit} 
                     onChange={this.onChange} 
                     values={this.state}
                     onClick={this.onClick}
                 />
-                    <button className='button' onClick={this.redirectToSignUp}>Sign Up</button>
+                </div>
+                 <button className='button signup float' onClick={this.redirectToSignUp}>Sign Up</button>
+                
+                    <div className='clear'></div>
                 </div>
         }
 }

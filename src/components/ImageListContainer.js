@@ -16,8 +16,13 @@ class ImageListContainer extends Component {
     
     render() {
         return (
-            <div>
-                <button className='button' onClick={this.redirectToGameInstruction}>How does the game work?</button>
+            <div><div className='header'>
+            <h1>Hello, welcome to the Museum Game!</h1>
+            <p className='intro'>Have a look to our paintings below.<br/>If you want to play the game you can login or sign up.
+            <br/>When the game starts you will see a covered painting.<br/>You can discover the painting by clicking on it and then you can guess the title of the picture. 
+            <br />Try to be fast in your choices, don't make other players wait for you. </p>
+           
+            </div>
                 <ImageList paintings={this.props.paintings} />
             </div>
         )
