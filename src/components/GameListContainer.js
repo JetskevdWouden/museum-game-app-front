@@ -5,7 +5,7 @@ import { createGame, getGames, getOneGame } from '../actions/games'
 import * as request from 'superagent'
 
 export class GameListContainer extends Component {
-  basUrl = "http://localhost:5000"
+  basUrl = "https://protected-eyrie-79199.herokuapp.com"
 
 
   componentDidMount() {
