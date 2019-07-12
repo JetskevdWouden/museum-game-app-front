@@ -37,7 +37,7 @@ export class SignUpFormContainer extends Component {
                     onChange={this.onChange} 
                     values={this.state}
                 />
-                <button onClick={this.redirecToHome}>Click here to log in</button>
+                <button className='button' onClick={this.redirecToHome}>Click here to log in</button>
                 </div>
     }
 }

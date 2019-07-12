@@ -6,25 +6,24 @@ import { createGame, getGames, getOneGame } from '../actions/games'
 
 export class GameListContainer extends Component {
 componentDidMount() {
-  return this.props.getGames() //gets all the games that can be playec
+  this.props.getGames() //gets all the games that can be played
 }
 
 onClickNewGame = (event) => {
-  console.log('new game made')
   event.preventDefault()
   this
     .props
     .createGame()
     .then(response => {
-      const { gameId } = response.body
-      console.log('gameId test:', gameId)
+      const { id } = response.body.game
       this
         .props
-        .getOneGame(gameId)
+        .getOneGame(id)
         .then(response => {
           //redirect to new game path with id of new game '/:game(newid)
-          this.props.history.push(`/game/${gameId}`)
+          this.props.history.push(`/game/${id}`)
         })
+
     })  // creates a new game when new game is clicked
 
   
@@ -39,7 +38,6 @@ onClickGame = (event) => {
 
 
   render() {
-    console.log("HELLO?!",this.props.games)
     return (
       <div>
         <GameList 

@@ -9,9 +9,15 @@ class ImageListContainer extends Component {
     componentDidMount() {
         this.props.getPaintings()
     }
+
+    redirectToGameInstruction = () => {
+        return this.props.history.push('/instructions')
+    }
+    
     render() {
         return (
             <div>
+                <button className='button' onClick={this.redirectToGameInstruction}>How does the game work?</button>
                 <ImageList paintings={this.props.paintings} />
             </div>
         )

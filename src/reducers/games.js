@@ -5,7 +5,6 @@ export default function (state = [], action) {
     case GET_GAMES_SUCCES:
       return action.payload
     case GAME_CREATE_SUCCES:
-    console.log('action.payload', action.payload.id)
       return [...state, action.payload]
     default:
       return state

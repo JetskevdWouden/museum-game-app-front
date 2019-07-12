@@ -55,7 +55,7 @@ class GameContainer extends Component {
         
         this.props.onNext(userId, this.props.points)
         const data = this.props.userScores
-        
+        console.log(data)
         request
             .put(`${this.basUrl}/score/4`)
             .send({data})
